@@ -202,3 +202,26 @@ button{
 .hearts:nth-child(3) { left: 50%; animation-duration: 5s; }
 .hearts:nth-child(4) { left: 70%; animation-duration: 7s; }
 .hearts:nth-child(5) { left: 90%; animation-duration: 5.5s; }
+
+
+/* Estilos específicos para móviles */
+@media (max-width: 600px) {
+    .contenedor {
+        width: 90vw;  /* Hace que el contenedor sea más flexible */
+        padding: 30px;
+    }
+
+    p {
+        font-size: 1.2rem; /* Reduce el tamaño del texto */
+    }
+
+    .botones {
+        flex-direction: column; /* Apila los botones en móviles */
+        gap: 10px; /* Reduce el espacio entre ellos */
+    }
+
+    button {
+        width: 80%; /* Botones más grandes y fáciles de tocar */
+        font-size: 1rem;
+    }
+}
