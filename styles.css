@@ -221,7 +221,9 @@ button{
     }
 
     button {
-        width: 80%; /* Botones más grandes y fáciles de tocar */
-        font-size: 1rem;
+        width: auto; /* Ajusta el tamaño al contenido */
+        max-width: 200px; /* Máximo ancho para que no se vean enormes */
+        font-size: 1rem; /* Tamaño de texto más equilibrado */
+        padding: 10px 15px;
     }
 }
