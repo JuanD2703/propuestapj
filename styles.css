@@ -219,11 +219,25 @@ button{
         flex-direction: column; /* Apila los botones en móviles */
         gap: 10px; /* Reduce el espacio entre ellos */
     }
+    #yesBtn {
+        width: 100px; /* Tamaño normal del botón "Sí" */
+        font-size: 1.1rem;
+        padding: 12px 15px;
+        left: 10%;
+    }
 
+    #noBtn {
+        width: 110px; /* Botón "No" más pequeño */
+        font-size: 1.1rem; /* Letra un poco más pequeña */
+        padding: 12px 15px;
+        left: 70%;
+        top: 25px;
+    }
+    
     button {
         width: auto; /* Ajusta el tamaño al contenido */
-        max-width: 200px; /* Máximo ancho para que no se vean enormes */
-        max-height: 200px;
+        max-width: 150px; /* Máximo ancho para que no se vean enormes */
+        max-height: 150px;
         font-size: 1,1rem; /* Tamaño de texto más equilibrado */
         padding: 12px 15px;
         text-align: center;
