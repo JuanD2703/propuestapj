@@ -13,6 +13,7 @@ body {
     height: 100vh;
 }
 .contenedor{
+    position: relative;
     background:white;
     padding: 250px;
     border-radius: 15px;

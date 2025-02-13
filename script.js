@@ -11,25 +11,29 @@ document.getElementById("overlay").addEventListener("click", function(event){
 });
 
 const noBtn = document.querySelector('#noBtn');
-const botones = document.querySelector(".botones");
+const contenedor = document.querySelector('.contenedor');
 
-noBtn.addEventListener('mouseover', function () {
-    // Obtener dimensiones del contenedor y del botón
-    const contenedorRect = botones.getBoundingClientRect();
+function moverBoton() {
+    const contenedorRect = contenedor.getBoundingClientRect();
     const btnRect = noBtn.getBoundingClientRect();
 
-    // Calcular límites dentro de los cuales el botón puede moverse
-    const maxX = contenedorRect.width - btnRect.width;
-    const maxY = contenedorRect.height - btnRect.height;
+    const maxX = contenedorRect.width - btnRect.width;  // Máximo movimiento en X dentro del contenedor
+    const maxY = contenedorRect.height - btnRect.height; // Máximo movimiento en Y dentro del contenedor
 
-    // Generar nuevas posiciones aleatorias dentro de los límites
+    // Generar nuevas posiciones dentro del contenedor
     const randomX = Math.random() * maxX;
     const randomY = Math.random() * maxY;
 
-  // Aplicar la nueva posición en el eje X y Y
-  noBtn.style.left = `${randomX}px`;
-  noBtn.style.top = `${randomY}px`;
-  
+    // Aplicar la nueva posición dentro del contenedor
+    noBtn.style.left = `${randomX}px`;
+    noBtn.style.top = `${randomY}px`;
+}
+
+// Mover el botón al pasar el mouse o tocar en móvil
+noBtn.addEventListener('mouseover', moverBoton);
+noBtn.addEventListener('touchstart', function (event) {
+    event.preventDefault();
+    moverBoton();
 });
 
 let audio = new Audio("canción.mp3");
@@ -99,7 +103,7 @@ yesBtn.addEventListener("click", function () {
     document.addEventListener("DOMContentLoaded", function () {
         const botones = document.querySelector(".botones");
         // Los botones ya están ocultos por CSS en el contenedor "botones"
-        typeWriterEffect("¿Quieres volver conmigo?", "typewriter", 100, function() {
+        typeWriterEffect("¿Quieres ser mi novia?", "typewriter", 100, function() {
             botones.style.display = "flex"; 
             setTimeout(() => {
                 botones.style.opacity = "1";
