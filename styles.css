@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ffccd5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contenedor{
+    background:white;
+    padding: 250px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 80vw;
+    transition: 0.3s;
+}
+
+.contenedor:hover {
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+p{
+    background-color: #d63384;
+    font-size: xx-large;
+    padding: 15px;
+    border-radius: 10px;
+    color: #ffebf0;
+    margin-bottom: 20px;
+    max-width: 350px;
+    box-shadow: 5px 5px 5px rgba(0.2, 0.2, 0.2, 0.3);
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+button{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: xx-large;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px;
+    padding: 0.50em;
+}
+
+.botones {
+    position: relative;
+    display: flex; /* Para centrar los botones */
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    margin-top: 20px;
+    
+    
+    opacity: 0;  /* Oculto al inicio */
+    transform: scale(0.8); /* Tamaño reducido al inicio */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+#yesBtn{
+    background-color: #ff4091;
+    color: white;
+    transform: translate(-100%,0);
+    position: relative;
+}
+
+#yesBtn:hover {
+    background-color: #d63384;
+}
+
+#noBtn{
+    background-color: #ccc;
+    color: black;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3 ease-in-out;
+    position: absolute;
+    left: 57%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+}
+
+#noBtn:hover {
+    background-color: #888;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup {
+    background: white;
+    padding: 5px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: aparecer 0.5s ease;
+}
+
+.popup img {
+    width: 100%; 
+    max-width: 400px;
+    border-radius: 10px;
+}
+    
+@keyframes aparecer{
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.overlay.activo {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hearts {
+    position: absolute;
+    bottom: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: floatUp 5s linear infinite;
+}
+
+/* Curvas del corazón */
+.hearts::before,
+.hearts::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.hearts::before {
+    top: -10px;
+    left: 0;
+}
+
+.hearts::after {
+    top: 0;
+    left: 10px;
+}
+
+/* Animación */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.5) rotate(-45deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2) rotate(-45deg);
+        opacity: 0;
+    }
+}
+/* Diferentes posiciones y tamaños para los corazones */
+.hearts:nth-child(1) { left: 10%; animation-duration: 4s; }
+.hearts:nth-child(2) { left: 30%; animation-duration: 6s; }
+.hearts:nth-child(3) { left: 50%; animation-duration: 5s; }
+.hearts:nth-child(4) { left: 70%; animation-duration: 7s; }
+.hearts:nth-child(5) { left: 90%; animation-duration: 5.5s; }
